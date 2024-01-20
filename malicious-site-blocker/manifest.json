@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Block Access",
+  "version": "1.0",
+  "description": "Block access to malicious urls.",
+  "permissions": ["webNavigation", "tabs"],
+  "host_permissions": ["http://localhost:2500/urls"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon1.png",
+    "48": "icon1.png",
+    "128": "icon1.png"
+  }
+}
